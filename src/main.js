@@ -3,20 +3,21 @@ import React from 'react';
 import { AppContainer } from 'react-hot-loader';
 import ReactDOM from 'react-dom';
 import {
-    BrowserRouter as Router,
     Route,
     Switch,
     HashRouter
 } from 'react-router-dom';
 
-import App from './components/App/App.jsx';
-import Layout from './components/Layout/Layout.jsx';
+import App from './components/App/App';
+import Homepage from './pages/homepage/homepage';
+import CharacterSpecific from './pages/character-specific/character-specfic';
 
 const routes = (
     <HashRouter>
         <Switch>
             <App>
-                <Route path="/" exact component={Layout} />
+                <Route path="/" exact component={Homepage} />
+                <Route path="/character-specfic/:id" component={CharacterSpecific} />
             </App>
         </Switch>
     </HashRouter>
